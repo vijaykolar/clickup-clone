@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "click": "apps/click",
+    "click-e2e": "apps/click-e2e"
+  }
+}
