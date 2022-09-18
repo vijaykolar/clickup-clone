@@ -1,17 +1,31 @@
-import styled from '@emotion/styled';
-import NxWelcome from './nx-welcome';
-import Header from './Header/Header';
+// @mui material components
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-const StyledApp = styled.div`
-  // Your style here
-`;
+// React TS themes
+import theme from '../assets/theme';
 
-export function App() {
+// React TS Dark Mode themes
+import themeDark from '../assets/theme-dark';
+
+// React TS contexts
+import { useMaterialUIController } from '../context';
+
+import { Container } from '@mui/material';
+import MDButton from '../components/MDButton';
+
+export default function App() {
+  const [controller] = useMaterialUIController();
+  const { darkMode } = controller;
+
   return (
-    <StyledApp>
-      <Header />
-    </StyledApp>
+    <ThemeProvider theme={darkMode ? themeDark : theme}>
+      <CssBaseline />
+      <Container maxWidth="xl">
+        <MDButton color="success" variant="outlined">
+          Button
+        </MDButton>
+      </Container>
+    </ThemeProvider>
   );
 }
-
-export default App;

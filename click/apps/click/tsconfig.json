@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
+  "typeRoots": ["node_modules/@types", "./src/types"],
   "compilerOptions": {
     "jsx": "react-jsx",
+    "skipLibCheck": true,
     "jsxImportSource": "@emotion/react",
     "allowJs": true,
     "esModuleInterop": true,
@@ -11,10 +13,20 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "downlevelIteration": true,
+    "baseUrl": "src"
   },
   "files": [],
-  "include": [],
+  "include": ["src"],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -22,5 +34,7 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ]
+  ],
 }
+
+
